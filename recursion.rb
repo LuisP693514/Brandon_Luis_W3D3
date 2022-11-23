@@ -66,33 +66,19 @@ p exp2(3, 10)
 
 class Array
 
-    def deep_dup
-
+    def deep_dup    
         arr = []
-
-        self.each do |ele|
-
+        self.each do |ele|     
             if ele.is_a?(Array)
-
-                ele.deep_dup
-
+                arr << ele.dup.deep_dup 
             else
-
                 arr << ele.dup
-
             end
-
         end
-
-        arr
-
+        arr 
     end
-
 
 end
 
-# [1, 
-#  [2], 
-#  [3, [4]]
-#   ]
+# [1, [2], [3, [4]]]
 
