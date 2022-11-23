@@ -61,7 +61,7 @@ def exp2(base, exponent)
     end
 end
 
-p exp2(3, 10)
+# p exp2(3, 10)
 
 
 class Array
@@ -82,3 +82,34 @@ end
 
 # [1, [2], [3, [4]]]
 
+
+# recursive
+
+def fib(n)
+    # 1,1,2,3,5,8
+    return [1,1].take(n) if n <= 2
+    return fib(n-1) + fib(n-2)
+
+end
+
+# p fib(0)
+
+def fib2(n)
+
+    return [1,1].take(n) if n < 3
+
+    arr = [1,1]
+
+    (n-2).times { arr << arr[-1] + arr[-2] }
+
+    arr
+
+end
+
+p fib2(100) # [1,1,2,3]
+
+def bin_search(arr, target)
+
+
+
+end
