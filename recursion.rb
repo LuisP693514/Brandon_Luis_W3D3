@@ -108,8 +108,36 @@ end
 
 p fib2(100) # [1,1,2,3]
 
-def bin_search(arr, target)
+def bsearch(arr, target)           
+    return 0 if arr[0] == target
+    midpoint = arr.length / 2       
+    if arr[midpoint] == target      
+        return midpoint
+    elsif arr[midpoint] > target  
+        return bsearch(arr[0...midpoint], target)
+    elsif arr[midpoint] < target
+        return midpoint + bsearch(arr[midpoint..target], target)
+    end
+end
+
+# bsearch([1, 2, 3, 4, 5, 6], 6)
 
 
+def merge_sort(array)
+    return array if array.length <= 1
 
+    
+end
+
+def merge(arr1, arr2)
+    new_arr = []
+
+    i = 0
+    max = [arr1.length, arr2.length].max
+    while i < max
+        if arr1[i] > arr2[i]
+            new_arr << arr1[i]
+        end
+
+    new_arr
 end
