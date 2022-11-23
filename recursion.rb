@@ -1,33 +1,67 @@
 
 
-# Iterative
+# # Iterative
 
-def range(start, last)
+# def range(start, last)
 
-    arr = []
+#     arr = []
 
-    (start...last).each do |ele|
+#     (start...last).each do |ele|
 
-        arr << ele
+#         arr << ele
 
-    end
+#     end
 
-    arr
+#     arr
 
-end
+# end
 
 
-# Recursive
+# # Recursive
 
-def range2(start, last)
+# def range2(start, last)
 
-    return [] if start > last - 1
+#     return [] if start > last - 1
 
-    [start] + range2(start+1, last)
+#     [start] + range2(start+1, last)
 
-end
+# end
 
 # p range2(1, 10)
+
+
+# Exponentiation1
+
+# def exp1(base, exponent)
+#     return 1 if exponent == 0
+#     base * exp1(base, exponent - 1)
+# end
+
+# p exp1(4, 3)
+
+
+# Exponentiation1
+
+# MAX_STACK_SIZE = 2
+# tracer = proc do |event|
+#   if event == 'call' && caller_locations.length > MAX_STACK_SIZE
+#     fail "Probable Stack Overflow"
+#   end
+# end
+# set_trace_func(tracer)
+
+def exp2(base, exponent)
+    return 1 if exponent == 0
+    return base if exponent == 1
+
+    if exponent % 2 == 0
+        exp2(base, exponent / 2) * exp2(base, exponent / 2)
+    else
+        base * (exp2(base, (exponent - 1) / 2) * exp2(base, (exponent - 1) / 2))
+    end
+end
+
+p exp2(3, 10)
 
 
 
